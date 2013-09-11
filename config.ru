@@ -20,7 +20,7 @@ helpers do
   end
 
   def send_message
-    direct_print_url = URI.parse("http://remote.bergcloud.com/playground/direct_print/#{ENV['LP_DIRECT_PRINT_CODE']}")
+    direct_print_url = URI.parse("http://5230d0cec3f3a18bb9000013.mprinter.io")
     message  = erb :stationery, :layout => nil
     response = Net::HTTP.post_form(direct_print_url, {"html" => message })
     p response.code
